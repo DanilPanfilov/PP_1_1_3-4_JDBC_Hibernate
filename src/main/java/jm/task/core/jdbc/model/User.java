@@ -1,12 +1,18 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Table
+import javax.persistence.*;
+import javax.transaction.Transactional;
+
+@Entity
+@Table(name = "users")
 public class User {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
